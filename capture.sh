@@ -19,4 +19,4 @@
 CAP="/usr/sbin/tcpdump"
 IF="enp1s0"
 
-$CAP -i $IF -nnXs 0 -w scap.pcap
+$CAP -i $IF -nnXs 0 -w scan.pcap
