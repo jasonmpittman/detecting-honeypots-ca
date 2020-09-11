@@ -23,16 +23,21 @@
 FW="/sbin/iptables"
 IF="enp1s0"
 
-if [$1 == "close"]; then
+if [ $1 == "close" ]; then
     $FW -F
     $FW -P INPUT DROP
+fi
 
-if [$1 == "open"]; then
+if [ $1 == "open" ]; then
     $FW -F
     $FW -P INPUT ACCEPT
-    
-if [$1 == "part"]; then
+fi
+
+if [ $1 == "part" ]; then
     $FW -F
     $FW -P INPUT DROP
     $FW -A INPUT -p tcp --destination-port 22 -j ACCEPT
     $FW -A INPUT -p tcp --destination-port 23 -j ACCEPT
+fi
+
+exit 0
